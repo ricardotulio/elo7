@@ -10,7 +10,7 @@ const defaultOptions = {
   form: {},
 }
 
-const buildOptions = curry((uri, method, data) => {
+const buildOptions = curry((method, uri, data) => {
   return merge(
     defaultOptions,
     {
