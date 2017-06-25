@@ -7,5 +7,5 @@ import {
 } from './buildOptionsDataProvider'
 
 test('if can build options', () => {
-  expect(buildOptions(uri, method, data)).toBe(expected)
+  expect(buildOptions(uri, method, data)).toEqual(expected)
 })

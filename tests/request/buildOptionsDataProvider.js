@@ -18,7 +18,7 @@ export const expected = {
   form: {
     redirect: '/',
     command: 'login',
-    email: 'promova.art@gmail.com',
-    password: 'cadokana',
+    email: 'john.due@email.com',
+    password: '123456',
   },
 }
