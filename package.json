@@ -1,19 +1,21 @@
 {
-  "name": "elo7",
-  "version": "1.0.0",
-  "description": "",
+  "name": "elo7-js",
+  "version": "0.1.0",
+  "description": "Scraper to consume elo7 sales data",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist/ && babel src/ --out-dir dist/",
-    "test": "nyc jest"
+    "test": "nyc jest --coverage",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "jest": {
     "verbose": true,
     "testMatch": [
       "**/tests/**/*.spec.js"
-    ]
+    ],
+    "collectCoverage": true
   },
-  "author": "",
+  "author": "Ricardo Ledo de Tulio <ledo.tulio@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "babel": "^6.23.0",
