@@ -7,3 +7,6 @@ install:
 
 script:
   - npm test
+
+after_success:
+  - travis_retry npm run coverage
