@@ -6,8 +6,42 @@
 
 Scraper to consume elo7 sales data
 
+## Install
+
+`yarn add elo7`
+
+Or using npm:
+
+`npm install elo7`
+
 ## Usage
+
+Import like usual:
+
+```js
+import elo7 from 'elo7'
+```
+
+also works using `require`:
+
+```
+const elo7 = require('elo7')
+```
+
+## Usage
+
+Connect to Elo7 account:
+
+```
+elo7.connect({ email: 'john.due@email.com', password: '123456' })
+```
 
 ## Testing
 
 To run the library tests, use `npm test`.
+
+## License
+
+```
+The MIT License (MIT)
+```
