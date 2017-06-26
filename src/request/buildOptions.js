@@ -1,4 +1,4 @@
-import { 
+import {
   curry,
   merge,
 } from 'ramda'
