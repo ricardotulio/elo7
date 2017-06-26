@@ -24,15 +24,13 @@ import elo7 from 'elo7'
 
 also works using `require`:
 
-```
+```js
 const elo7 = require('elo7')
 ```
 
-## Usage
-
 Connect to Elo7 account:
 
-```
+```js
 elo7.connect({ email: 'john.due@email.com', password: '123456' })
 ```
 
