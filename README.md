@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/ricardotulio/elo7.svg?branch=master)](https://travis-ci.org/ricardotulio/elo7) [![Coverage Status](https://coveralls.io/repos/github/ricardotulio/elo7/badge.svg?branch=master)](https://coveralls.io/github/ricardotulio/elo7?branch=master) [![npm module](https://badge.fury.io/js/elo7-js.svg)](https://www.npmjs.org/package/elo7-js) [![Code Climate](https://codeclimate.com/github/ricardotulio/elo7/badges/gpa.svg)](https://codeclimate.com/github/ricardotulio/elo7)
 
-## Description
-
 Scraper to consume elo7 sales data
 
 ## Install
