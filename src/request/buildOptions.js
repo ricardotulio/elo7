@@ -10,15 +10,15 @@ const defaultOptions = {
   form: {},
 }
 
-const buildOptions = curry((method, uri, data) => {
-  return merge(
+const buildOptions = curry((method, uri, data) =>
+  merge(
     defaultOptions,
     {
       method,
       uri,
-      form: data
-    }
-  )
-})
+      form: data,
+    },
+  ),
+)
 
 export default buildOptions
