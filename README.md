@@ -1,6 +1,6 @@
 # Elo7 Scraper
 
-[![Build Status](https://travis-ci.org/ricardotulio/elo7.svg?branch=master)](https://travis-ci.org/ricardotulio/elo7) [![Coverage Status](https://coveralls.io/repos/github/ricardotulio/elo7/badge.svg?branch=master)](https://coveralls.io/github/ricardotulio/elo7?branch=master)
+[![Build Status](https://travis-ci.org/ricardotulio/elo7.svg?branch=master)](https://travis-ci.org/ricardotulio/elo7) [![Coverage Status](https://coveralls.io/repos/github/ricardotulio/elo7/badge.svg?branch=master)](https://coveralls.io/github/ricardotulio/elo7?branch=master) [![Code Climate](https://codeclimate.com/github/ricardotulio/elo7/badges/gpa.svg)](https://codeclimate.com/github/ricardotulio/elo7)
 
 ## Description
 
