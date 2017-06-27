@@ -10,12 +10,12 @@ const defaultOptions = {
   form: {},
 }
 
-const buildOptions = curry((method, uri, data) =>
+const buildOptions = curry((method, path, data) =>
   merge(
     defaultOptions,
     {
       method,
-      uri,
+      uri: `https://www.elo7.com.br${path}`,
       form: data,
     },
   ),
