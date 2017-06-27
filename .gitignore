@@ -2,3 +2,4 @@
 .nyc_output/
 jest_0/
 node_modules/
+coverage/
