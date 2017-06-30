@@ -1,5 +1,5 @@
 const order = {
-  list: '/sellerOrder.do?command=showOrderHistoryForm'
+  list: (pageNum) => `/seller/list/order/ALL?filter=ALL&pageNum=${pageNum}`
 }
 
 export default {
