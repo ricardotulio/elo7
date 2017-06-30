@@ -1,4 +1,4 @@
-export const uri = 'https://www.elo7.com.br/login.do'
+export const uri = '/login.do'
 
 export const method = 'POST'
 
