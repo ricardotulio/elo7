@@ -1,5 +1,5 @@
 {
-  "name": "elo7-js",
+  "name": "elo7",
   "version": "0.1.0",
   "description": "Scraper to consume elo7 sales data",
   "main": "index.js",
