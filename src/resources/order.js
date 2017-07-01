@@ -6,17 +6,14 @@ import {
   cond,
   curry,
   divide,
-  equals,
   gt,
   ifElse,
   inc,
   length,
   map,
-  merge,
   not,
   pipe,
   replace,
-  tap,
   test,
   __,
 } from 'ramda'
@@ -43,19 +40,19 @@ const getOrderNumber = (selector, element) =>
 const getOrderStatus = pipe(
   (selector, element) => selector('.alert', element).text(),
   cond([
-    [ test(/confirmar o recebimento/),  always('shipping') ],
-    [ test(/cancelou este pedido/),     always('canceled') ],
-    [ test(/finalizada com sucesso/),   always('finished') ],
-    [ test(/finalizou o pedido/),  always('finished') ],
-    [ test(/efetuar o pagamento/),      always('waiting_payment') ],
-    [ test(/confirmação do pagamento/), always('processing') ],
+    [test(/confirmar o recebimento/), always('shipping')],
+    [test(/cancelou este pedido/), always('canceled')],
+    [test(/finalizada com sucesso/), always('finished')],
+    [test(/finalizou o pedido/), always('finished')],
+    [test(/efetuar o pagamento/), always('waiting_payment')],
+    [test(/confirmação do pagamento/), always('processing')],
   ]),
 )
 
 const getOrderDate = (selector, element) =>
   moment(
     selector('.details time', element).text(),
-    'DD-MM-YYYY'
+    'DD-MM-YYYY',
   ).format('YYYY-MM-DD')
 
 const toFixed = curry((number, precision) => number.toFixed(precision))
@@ -68,21 +65,19 @@ const getOrderValue = pipe(
   toFixed(__, 2),
 )
 
-const getOrderInfo = curry((selector, element) => {
-  return {
-    customer_name: getCustomerName(selector, element),
-    order_number: getOrderNumber(selector, element),
-    date: getOrderDate(selector, element),
-    value: getOrderValue(selector, element),
-    status: getOrderStatus(selector, element),
-  }
-})
+const getOrderInfo = curry((selector, element) => ({
+  customer_name: getCustomerName(selector, element),
+  order_number: getOrderNumber(selector, element),
+  date: getOrderDate(selector, element),
+  value: getOrderValue(selector, element),
+  status: getOrderStatus(selector, element),
+}))
 
 const scrap = ifElse(
     hasOrders,
     selector => map(
       getOrderInfo(selector),
-      toArray(selector('ol.orders-list li.order'))
+      toArray(selector('ol.orders-list li.order')),
     ),
     () => [],
   )
@@ -104,5 +99,5 @@ const list = curry((session, page) => {
 })
 
 export default {
-  list: (session) => () => list(session, 1),
+  list: session => () => list(session, 1),
 }

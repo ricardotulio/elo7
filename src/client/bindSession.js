@@ -1,5 +1,4 @@
 import {
-  assoc,
   equals,
   ifElse,
   type,
@@ -14,7 +13,7 @@ const bindSession = (session, resources) => {
   const bindRecursive = ifElse(
     isFunction,
     bind,
-    resource => map(bindRecursive, resource)
+    resource => map(bindRecursive, resource),
   )
 
   return map(bindRecursive, resources)

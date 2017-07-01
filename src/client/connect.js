@@ -1,7 +1,7 @@
 import requestPromise from 'request-promise'
+import { prop } from 'ramda'
 import request from '../request'
 import bindSession from './bindSession'
-import { prop } from 'ramda'
 
 import resources from '../resources'
 
