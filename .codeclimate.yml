@@ -6,4 +6,5 @@ engines:
 
 ratings:
    paths:
-   - "**.js"
+   - "src/**.js"
+   - "tests/**.js"
