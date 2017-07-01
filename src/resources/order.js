@@ -25,7 +25,7 @@ const toArray = element => element.toArray()
 const hasNextPage = selector =>
   not(selector('.pagination').children().last().hasClass('disabled'))
 
-const hasOrders = selector => pipe(
+const hasOrders = pipe(
     selector => selector('ol.orders-list li.order'),
     length,
     gt(__, 0),

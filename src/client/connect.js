@@ -16,7 +16,7 @@ const connect = (credentials) => {
   }
 
   return request.post(session, '/login.do', data)
-    .catch(error => bindSession(session, resources))
+    .catch(() => bindSession(session, resources))
 }
 
 export default connect
