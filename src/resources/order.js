@@ -41,6 +41,7 @@ const getOrderStatus = pipe(
   (selector, element) => selector('.alert', element).text(),
   cond([
     [test(/confirmar o recebimento/), always('shipping')],
+    [test(/postagem (PLP) para enviar/), always('shipping')],
     [test(/cancelou este pedido/), always('canceled')],
     [test(/finalizada com sucesso/), always('finished')],
     [test(/finalizou o pedido/), always('finished')],
