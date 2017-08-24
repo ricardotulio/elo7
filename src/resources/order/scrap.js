@@ -1,9 +1,12 @@
 import cheerio from 'cheerio'
 import { 
+  always,
   applySpec,
+  curry,
   map,
   pipe,
   trim,
+  __,
 } from 'ramda'
 
 const toArray = elem => elem.toArray()
@@ -15,20 +18,35 @@ const list = pipe(
   toArray,
 )
 
-const customerName = () => 'Maria'
+const bindOrder = $ => {
+  const bindScope = scope => $.bind(scope)
 
-// const customerName = selector => order => 
-//   text(selector('.customer-name', order))
+  return map(
+    bindScope,
+    list($),
+  )
+}
+
+const scrapInfo = fn => 
+  pipe(
+    $ => $(fn()),
+    text,
+    trim,
+  )
+
+const customerName = always('.customer-name')
+const amount = always('.amount')
 
 const customer = applySpec({
   customer: {
-    name: customerName,
+    name: scrapInfo(customerName),
   },
+  amount: scrapInfo(amount)
 })
 
 const scrap = pipe(
   cheerio.load,
-  list,
+  bindOrder,
   map(customer),
 )
   
